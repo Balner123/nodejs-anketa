@@ -5,7 +5,7 @@ body {
     padding: 0;
 }
 
-#bill {
+.bill {
     background-color: white;
     padding: 30px;
 }

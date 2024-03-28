@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,18 +23,17 @@
 
 
         ""
-        1. Přibližně kolik hodin týdně strávíte mimo svůj dům ? 
-        2. Přibližně kolik hodin strávíte "na cestách" (venkovní prostory) ?
-        3. Přibližně kolik hodin týdně strávite mimo jakoukoliv zastavěnou oblast (příroda, pole...cokolvek)?
-        
-        4 . Na stupnici naznačte jak mnoho si ceníte svého času
-        5.  Zkuste naznačit nakolik si ceníte svého volného času (v kontextu s minulou odpovědí)
-        6. kde trávíte většinu "volného" času ? [options: OuTside, inside];
+        1. Přibližně kolik hodin týdně strávíte mimo svůj dům ? [textové pol, jenom čísla , h ]
+        2. Přibližně kolik hodin strávíte "na cestách" (venkovní prostory) ?  [textové pol, jenom čísla , h ]
+        3. Přibližně kolik hodin týdně strávite mimo jakoukoliv zastavěnou oblast (příroda, pole...cokolvek)?  [textové pol, jenom čísla , h ]
+        4 . Na stupnici naznačte jak mnoho si ceníte svého času [posuvná stupnice, 1-10]
+        5.  Zkuste naznačit nakolik si ceníte svého volného času (v kontextu s minulou odpovědí) [posuvná stupnice, 1-10]
+        6. kde trávíte většinu "volného" času ? [Datalist ;options: OuTside, inside, v myšlenkách];
 
-        7. jaké je vaše mínění o vaší osobě (vaše sebedůvěra)? 
+        7. jaké je vaše mínění o vaší osobě (vaše sebedůvěra)? [radio; options: nespustím ze sebe oči, docela si věřím, hory přenáším]
         
-        8. Čtete ? [options: z donucení, jen to co musím,, rád ,jsem knihomol]
-        10. Myslíte, že knihy jsou již nezpůsobilý či zastaralý zdroj informací ?
+        8. Čtete ? [radio ;options: z donucení, jen to co musím,, rád ,jsem knihomol]
+        10. Myslíte, že knihy jsou již nezpůsobilý či zastaralý zdroj informací ? [radio ; options: ANO , NE , Co to je za otázku ?]
 
         ""
 
@@ -43,3 +43,109 @@
     </div>
 </body>
 </html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOTAZNÍK</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="bill">
+        <h1>Anketa bez konce...</h1>
+        <form action="/submit" method="post">
+            <p>Odpovídejte prosím blízce pravdy i na hloupé otázky. Na znamení souhlasu s odhalením vašich postojů a návyků sdělte jméno.</p>
+            <label for="name">Jméno:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <p>1. Přibližně kolik hodin týdně strávíte mimo svůj dům ? </p>
+            <input type="number" name="hours_outside"><br><br>
+
+            <p>2. Přibližně kolik hodin strávíte "na cestách" (venkovní prostory) ? </p>
+            <input type="number" name="hours_traveling"><br><br>
+
+            <p>3. Přibližně kolik hodin týdně strávite mimo jakoukoliv zastavěnou oblast (příroda, pole...cokolvek)?</p>
+            <input type="number" name="hours_nature"><br><br>
+
+            <p>4. Na stupnici naznačte jak mnoho si ceníte svého času [1-10]</p>
+            <table>
+            <tr>
+                <th><input type="range" name="time_value" min="1" max="10" id="time_value" value="5"></th>
+                <th><span id="volno"></span></th>
+            </tr>
+            </table>
+
+
+            <p>5. Zkuste naznačit nakolik si ceníte svého volného času (v kontextu s minulou odpovědí) [1-10]</p>
+            <table>
+                <tr>
+                    <th><input type="range" name="free_time_value" min="1" max="10" id="free_time_value" value="5"></th>
+                    <th><span id="volno2"></span></th>
+                    
+                </tr>
+            </table>
+
+            <p>6. kde trávíte většinu "volného" času ? </p>
+            <input list="places" name="favorite_place">
+            <datalist id="places">
+                <option value="Outside">
+                <option value="Inside">
+                <option value="V myšlenkách">
+            </datalist><br><br>
+
+            <p>7. jaké je vaše mínění o vaší osobě (vaše sebedůvěra)? </p>
+            <input type="radio" id="confidence1" name="confidence" value="nespustím ze sebe oči">
+            <label for="confidence1">Nespustím ze sebe oči</label><br>
+            <input type="radio" id="confidence2" name="confidence" value="docela si věřím">
+            <label for="confidence2">Docela si věřím</label><br>
+            <input type="radio" id="confidence3" name="confidence" value="hory přenáším">
+            <label for="confidence3">Hory přenáším</label><br><br>
+
+            <p>8. Čtete ? </p>
+            <input type="radio" id="reading1" name="reading" value="z donucení">
+            <label for="reading1">Z donucení</label><br>
+            <input type="radio" id="reading2" name="reading" value="jen to co musím">
+            <label for="reading2">Jen to, co musím</label><br>
+            <input type="radio" id="reading3" name="reading" value="rád">
+            <label for="reading3">Rád</label><br>
+            <input type="radio" id="reading4" name="reading" value="jsem knihomol">
+            <label for="reading4">Jsem knihomol</label><br><br>
+
+            <p>10. Myslíte, že knihy jsou již nezpůsobilý či zastaralý zdroj informací ? </p>
+            <input type="radio" id="books1" name="books" value="ANO">
+            <label for="books1">ANO</label><br>
+            <input type="radio" id="books2" name="books" value="NE">
+            <label for="books2">NE</label><br>
+            <input type="radio" id="books3" name="books" value="Co to je za otázku ?">
+            <label for="books3">Co to je za otázku ?</label>
+
+            <p>Pokud nám chcete zaslat odpovědi, klikněte na odeslat</p>
+            <button type="submit">Odeslat</button>
+        </form>
+    </div>
+    <%- include('blocks/footer'); -%>
+</body>
+
+
+<script>
+    const slider = document.getElementById('free_time_value');
+    const output = document.getElementById('volno');
+
+    const slider2 = document.getElementById('time_value');
+    const output2 = document.getElementById('volno2');
+    output.innerHTML = slider.value;
+    output2.innerHTML = slider2.value;
+    
+    slider.oninput = function() {
+        output2.innerHTML = this.value;
+    }
+slider2.oninput = function() {
+        output.innerHTML = this.value;}
+    </script>
+</html>
+
+
+
