@@ -2,7 +2,22 @@
   {
     "ip": "192.168.56.1",
     "timestamp": "2024-03-28T12:06:47.171Z",
-
+    "answers": {
+      "name": "",
+      "hours_outside": "",
+      "hours_traveling": "",
+      "hours_nature": "0",
+      "time_value": "5",
+      "free_time_value": "5",
+      "favorite_place": "",
+      "confidence": "docela si věřím",
+      "reading": "jsem knihomol",
+      "books": "Co to je za otázku ?"
+    }
+  },
+  {
+    "ip": "192.168.56.1",
+    "timestamp": "2024-03-28T12:49:38.155Z",
     "answers": {
       "name": "",
       "hours_outside": "",

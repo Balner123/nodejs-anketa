@@ -5,13 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESULTS</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
 <div class="bill">
     <H1>Děkujeme za vaše odpovědi!</H1>
     <li>zde se můžete podívat na odpovědi vašich bližních...</li>
 
-    
+  
+    <table>
+        <thead>
+            <tr>
+                <th>IP Address</th>
+                <th>Timestamp</th>
+                <th>Name</th>
+                <th>Hours Outside</th>
+                <th>Hours Traveling</th>
+                <th>Hours in Nature</th>
+                <th>Time Value</th>
+                <th>Free Time Value</th>
+                <th>Favorite Place</th>
+                <th>Confidence</th>
+                <th>Reading</th>
+                <th>Books</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(entry => { %>
+                <tr>
+                    <td><%= entry.ip %></td>
+                    <td><%= entry.timestamp %></td>
+                    <td><%= entry.answers.name %></td>
+                    <td><%= entry.answers.hours_outside %></td>
+                    <td><%= entry.answers.hours_traveling %></td>
+                    <td><%= entry.answers.hours_nature %></td>
+                    <td><%= entry.answers.time_value %></td>
+                    <td><%= entry.answers.free_time_value %></td>
+                    <td><%= entry.answers.favorite_place %></td>
+                    <td><%= entry.answers.confidence %></td>
+                    <td><%= entry.answers.reading %></td>
+                    <td><%= entry.answers.books %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
 
 </div>
     

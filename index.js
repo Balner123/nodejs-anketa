@@ -39,10 +39,19 @@ app.post('/submit',(req,res)=>{
             
 } );
 
-app.get('/results',(req,res)=>{
-
-        res.render('results')
-})
+app.get('/results', (req, res) => {
+        fs.readFile('data.json', (err, data) => {
+            if (err) {
+                console.error('Chyba při čtení souboru data.json:', err);
+                return res.status(500).send('Chyba na serveru');
+            }else{
+                const jsonData = JSON.parse(data);
+                res.render('results', { data: jsonData });
+            }
+               
+        
+        });
+    });
 
 
 
