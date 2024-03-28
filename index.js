@@ -5,6 +5,7 @@ const fs = require('fs');
 const PORT = 3000;
 const app = express();
 const ip = require('ip');
+const moment = require('moment');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,11 +18,15 @@ app.get('/', (req, res) => {
         res.render('index');
 });
 
+
 app.post('/submit',(req,res)=>{
+
         console.log(req.body)
+        let date = moment().format('DD-M-YYYY');
+
         const odpoved = {
                 ip: ip.address(),
-                timestamp: new Date().toISOString(),
+                timestamp: date,
                 answers: req.body,
               };
 
@@ -38,6 +43,7 @@ app.post('/submit',(req,res)=>{
               });
             
 } );
+
 
 app.get('/results', (req, res) => {
         fs.readFile('data.json', (err, data) => {
