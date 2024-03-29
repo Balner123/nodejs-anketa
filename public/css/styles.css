@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #4e4e4e;
+    background: linear-gradient(to bottom, rgb(188, 209, 218), #485863);
     margin: 100px;
     padding: 0;
 }
@@ -8,13 +8,17 @@ body {
 .bill {
     background-color: white;
     padding: 30px;
+    border-radius: 10px;
 }
 h1 {
     color: white;
-    background-color: blue;
+    background-color: rgb(77, 130, 199);
     font-size: 30pt;
     padding: 10px;
     margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -22,3 +26,16 @@ h2 {
     text-align: center;
     text-transform: uppercase;
 }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
