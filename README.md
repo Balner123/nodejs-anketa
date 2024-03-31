@@ -8,3 +8,6 @@ Webová anketa - projekt PVY
 4. formulář, routa `SUBMIT`, ukládání do `DATA.JSON`
 5. tabulka v `results.ejs`
 ---
+
+## Poznámky:
+- otázky do ankety jsou vygenerované chatGPT (kdo by nevěřil ať to zkusí dokázat...)
