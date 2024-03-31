@@ -1,22 +1,36 @@
-body {
+
+
+   body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, rgb(188, 209, 218), #485863);
-    margin: 100px;
+    background-image: url("../images/resut.jpg");
+    
+    margin: 20px;
     padding: 0;
 }
 
 .bill {
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 100%;
+    overflow-x: auto; 
+    margin: auto;
 }
+.resu {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+}
+
 h1 {
     color: white;
     background-color: rgb(77, 130, 199);
-    font-size: 30pt;
+    font-size: 2em;
     padding: 10px;
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -27,15 +41,57 @@ h2 {
     text-transform: uppercase;
 }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .bill {
+        padding: 10px;
+    }
+}
+
+input {
+    margin-left: 20px;
+}
+label {
+    margin-left: 20px;
+}
+
+
+   p {
+    background-color: #cddcfc;
+    margin: 15px;
+    border-radius: 5px;
+    padding: 10px;
+   }
+
+button {
+    margin-left: 40px;
+    padding: 10px 20px; /* nastavuje vnitřní odsazení */
+    background-color: #2522fa; /* barva pozadí */
+    color: white; /* barva textu */
+    border: none; /* odstraní ohraničení */
+    border-radius: 5px; /* zaoblení rohů */
+    cursor: pointer; /* změní kurzor na ruku při najetí myší */
+    transition: background-color 0.3s ease; /* plynulá změna barvy pozadí při najetí myší */
+}
+
+/* Pokud chcete změnit barvu tlačítka při najetí myší */
+button:hover {
+    background-color: #7170ca;
+}

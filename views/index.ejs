@@ -55,26 +55,26 @@
     <link rel="icon" href="images/fire.png">
 </head>
 <body>
-    <div class="bill">
+    <div class="resu">
         <h1>Anketa bez konce...</h1>
-        <form action="/submit" method="post">
-            <p>Odpovídejte prosím blízce pravdy i na hloupé otázky. Na znamení souhlasu s odhalením vašich postojů a návyků sdělte jméno.</p>
+        <form action="/submit" method="post" onsubmit="return validateForm()">
+            <p class="nu">Odpovídejte prosím blízce pravdy i na hloupé otázky. Na znamení souhlasu s odhalením vašich postojů a návyků sdělte jméno.</p>
             <label for="name">Jméno:</label>
-            <input type="text" id="name" name="name"><br><br>
+            <input type="text" id="name" name="name" required><br><br>
 
             <p>1. Přibližně kolik hodin týdně strávíte mimo svůj dům ? </p>
-            <input type="number" name="hours_outside"><br><br>
+            <input type="number" name="hours_outside" required><br><br>
 
             <p>2. Přibližně kolik hodin strávíte "na cestách" (venkovní prostory) ? </p>
-            <input type="number" name="hours_traveling"><br><br>
+            <input type="number" name="hours_traveling" required><br><br>
 
             <p>3. Přibližně kolik hodin týdně strávite mimo jakoukoliv zastavěnou oblast (příroda, pole...cokolvek)?</p>
-            <input type="number" name="hours_nature"><br><br>
+            <input type="number" name="hours_nature" required><br><br>
 
             <p>4. Na stupnici naznačte jak mnoho si ceníte svého času [1-10]</p>
             <table>
             <tr>
-                <th><input type="range" name="time_value" min="1" max="10" id="time_value" value="5"></th>
+                <th><input type="range" name="time_value" min="1" max="10" id="time_value" value="5" class="nu" required></th>
                 <th><span id="volno"></span></th>
             </tr>
             </table>
@@ -83,14 +83,14 @@
             <p>5. Zkuste naznačit nakolik si ceníte svého volného času (v kontextu s minulou odpovědí) [1-10]</p>
             <table>
                 <tr>
-                    <th><input type="range" name="free_time_value" min="1" max="10" id="free_time_value" value="5"></th>
+                    <th><input type="range" name="free_time_value" min="1" max="10" id="free_time_value" value="5" class="nu" required></th>
                     <th><span id="volno2"></span></th>
                     
                 </tr>
             </table>
 
             <p>6. kde trávíte většinu "volného" času ? </p>
-            <input list="places" name="favorite_place">
+            <input list="places" name="favorite_place" required>
             <datalist id="places">
                 <option value="Outside">
                 <option value="Inside">
@@ -123,8 +123,10 @@
             <input type="radio" id="books3" name="books" value="Co to je za otázku ?">
             <label for="books3">Co to je za otázku ?</label>
 
-            <p>Pokud nám chcete zaslat odpovědi, klikněte na odeslat</p>
-            <button type="submit">Odeslat</button>
+            <p class="nu">Pokud nám chcete zaslat odpovědi, klikněte na odeslat
+                <button type="submit">Odeslat</button>
+            </p>
+            
         </form>
     </div>
     <%- include('blocks/footer'); -%>
@@ -145,7 +147,21 @@
     }
 slider2.oninput = function() {
         output.innerHTML = this.value;}
-    </script>
+    
+    function validateForm() {
+        const hoursOutside = document.getElementsByName('hours_outside')[0].value;
+        const hoursTraveling = document.getElementsByName('hours_traveling')[0].value;
+        const hoursNature = document.getElementsByName('hours_nature')[0].value;
+
+        if (isNaN(hoursOutside) || isNaN(hoursTraveling) || isNaN(hoursNature)) {
+            alert("Please enter a valid number for hours.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 </html>
 
 

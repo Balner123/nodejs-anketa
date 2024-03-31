@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,56 +10,48 @@
     <title>RESULTS</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/fire.png">
-    
 </head>
 <body>
-<div class="bill">
-    <H1>Děkujeme za vaše odpovědi!</H1>
-    <li>zde se můžete podívat na odpovědi vašich bližních...</li>
+    <div class="bill">
+        <h1>Děkujeme za vaše odpovědi!</h1>
+        <p>Zde se můžete podívat na odpovědi vašich bližních...</p>
 
-  
-    <table>
-        <thead>
-            <tr>
-                <th><a href="/results?sort=ip">IP Address</a></th>
-                <th><a href="/results?sort=timestamp">Timestamp</a></th>
-                <th><a href="/results?sort=name">Name</a></th>
-                <th><a href="/results?sort=hours_outside">Hours Outside</a></th>
-                <th><a href="/results?sort=hours_traveling">Hours Traveling</a></th>
-                <th><a href="/results?sort=hours_nature">Hours in Nature</a></th>
-                <th><a href="/results?sort=time_value">Time Value</a></th>
-                <th><a href="/results?sort=free_time_value">Free Time Value</a></th>
-                <th><a href="/results?sort=favorite_place">Favorite Place</a></th>
-                <th><a href="/results?sort=confidence">Confidence</a></th>
-                <th><a href="/results?sort=reading">Reading</a></th>
-                <th><a href="/results?sort=books">Books</a></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% data.forEach(entry => { %>
+        <table>
+            <thead>
                 <tr>
-                    <td><%= entry.ip %></td>
-                    <td><%= entry.timestamp %></td>
-                    <td><%= entry.answers.name %></td>
-                    <td><%= entry.answers.hours_outside %></td>
-                    <td><%= entry.answers.hours_traveling %></td>
-                    <td><%= entry.answers.hours_nature %></td>
-                    <td><%= entry.answers.time_value %></td>
-                    <td><%= entry.answers.free_time_value %></td>
-                    <td><%= entry.answers.favorite_place %></td>
-                    <td><%= entry.answers.confidence %></td>
-                    <td><%= entry.answers.reading %></td>
-                    <td><%= entry.answers.books %></td>
+                    <th><a href="/results?sort=ip">IP Address</a></th>
+                    <th><a href="/results?sort=timestamp">Timestamp</a></th>
+                    <th><a href="/results?sort=name">Name</a></th>
+                    <th><a href="/results?sort=hours_outside">Hours Outside</a></th>
+                    <th><a href="/results?sort=hours_traveling">Hours Traveling</a></th>
+                    <th><a href="/results?sort=hours_nature">Hours in Nature</a></th>
+                    <th><a href="/results?sort=time_value">Time Value</a></th>
+                    <th><a href="/results?sort=free_time_value">Free Time Value</a></th>
+                    <th><a href="/results?sort=favorite_place">Favorite Place</a></th>
+                    <th><a href="/results?sort=confidence">Confidence</a></th>
+                    <th><a href="/results?sort=reading">Reading</a></th>
+                    <th><a href="/results?sort=books">Books</a></th>
                 </tr>
-            <% }); %>
-        </tbody>
-    </table>
-</body>
-
-</div>
-    
-    
-        
-
+            </thead>
+            <tbody>
+                <% data.forEach(entry => { %>
+                    <tr>
+                        <td><%= entry.ip %></td>
+                        <td><%= entry.timestamp %></td>
+                        <td><%= entry.answers.name %></td>
+                        <td><%= entry.answers.hours_outside %></td>
+                        <td><%= entry.answers.hours_traveling %></td>
+                        <td><%= entry.answers.hours_nature %></td>
+                        <td><%= entry.answers.time_value %></td>
+                        <td><%= entry.answers.free_time_value %></td>
+                        <td><%= entry.answers.favorite_place %></td>
+                        <td><%= entry.answers.confidence %></td>
+                        <td><%= entry.answers.reading %></td>
+                        <td><%= entry.answers.books %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
